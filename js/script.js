@@ -61,3 +61,29 @@ function createList(list) {
 createList(cats);
 
 // question 8
+
+function createCats(cats) {
+
+    let html = "";
+
+    for(let i = 0; i < cats.length; i++) {
+
+        let ageProperty = "Age unknown";
+
+        if(cats[i].age) {
+            ageProperty = cats[i].age;
+     }
+
+    html += `<div class="cat">
+                <h5>${cats[i].name}</h5>
+                <p>Age: ${ageProperty}</p>
+            </div>`;
+    }
+
+    return html;
+}
+
+const newHTML = createCats(cats);
+
+const catContainer = document.querySelector(".cat-container");
+catContainer.innerHTML = newHTML;
